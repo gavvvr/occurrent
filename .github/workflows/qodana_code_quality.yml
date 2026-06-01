@@ -28,7 +28,7 @@ jobs:
       - name: PWD test
         run: pwd
       - name: Tree test
-        run: tree qodana
+        run: ${{ runner.temp }}/qodana/results/
       - uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: "${{ runner.temp }}/qodana/results/qodana.sarif.json"
